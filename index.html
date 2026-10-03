@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Fire Emote Hub</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#080808,#171717,#050505);
+  color:white;
+  min-height:100vh;
+}
+.container{
+  max-width:500px;
+  margin:auto;
+  padding:25px 18px;
+}
+.logo{
+  text-align:center;
+  font-size:32px;
+  font-weight:bold;
+  color:#ff9d00;
+  text-shadow:0 0 15px #ff6600;
+}
+.subtitle{
+  text-align:center;
+  color:#bbb;
+  margin-bottom:25px;
+}
+.card{
+  background:#151515;
+  border:1px solid #333;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 0 25px #000;
+}
+label{
+  display:block;
+  margin:12px 0 7px;
+  font-weight:bold;
+}
+input,select{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #444;
+  background:#090909;
+  color:white;
+  font-size:16px;
+}
+button{
+  width:100%;
+  margin-top:20px;
+  padding:15px;
+  border:0;
+  border-radius:12px;
+  background:linear-gradient(90deg,#ff7b00,#ffb300);
+  color:#111;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+button:active{transform:scale(.98)}
+.result{
+  display:none;
+  margin-top:20px;
+  padding:15px;
+  border-radius:12px;
+  background:#101010;
+  border:1px solid #333;
+  text-align:center;
+}
+.emote{
+  font-size:55px;
+  margin:10px;
+}
+.note{
+  margin-top:20px;
+  font-size:12px;
+  color:#888;
+  text-align:center;
+}
+.footer{
+  text-align:center;
+  margin-top:25px;
+  color:#777;
+  font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="logo">🔥 FREE FIRE</div>
+  <div class="subtitle">EMOTE HUB</div>
+
+  <div class="card">
+
+    <label>Enter Free Fire UID</label>
+    <input id="uid" type="text" placeholder="Enter your UID">
+
+    <label>Select Emote</label>
+    <select id="emote">
+      <option>😂 Laugh Emote</option>
+      <option>💃 Dance Emote</option>
+      <option>🔥 Fire Emote</option>
+      <option>👑 Victory Emote</option>
+      <option>😎 Cool Emote</option>
+    </select>
+
+    <button onclick="showResult()">CHECK EMOTE</button>
+
+    <div class="result" id="result">
+      <div class="emote">🔥</div>
+      <b id="message"></b>
+      <p>Emote demo selected successfully.</p>
+    </div>
+
+  </div>
+
+  <div class="note">
+    This website is an emote demo/interface and does not request
+    your Free Fire password, OTP or account credentials.
+  </div>
+
+  <div class="footer">
+    © 2026 Free Fire Emote Hub
+  </div>
+
+</div>
+
+<script>
+function showResult(){
+
+  const uid = document.getElementById("uid").value.trim();
+  const emote = document.getElementById("emote").value;
+  const result = document.getElementById("result");
+  const message = document.getElementById("message");
+
+  if(uid === ""){
+    alert("Please enter your Free Fire UID.");
+    return;
+  }
+
+  message.innerText = "UID: " + uid + " | " + emote;
+
+  result.style.display = "block";
+}
+</script>
+
+</body>
+</html>
